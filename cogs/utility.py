@@ -167,7 +167,7 @@ class Utility:
     @trigger_typing
     async def about(self, ctx):
         """Shows information about the bot."""
-        em = discord.Embed(color=0x36393F, timestamp=datetime.datetime.utcnow())
+        em = discord.Embed(color=discord.Color.blurple(), timestamp=datetime.datetime.utcnow())
         em.set_author(name='Modmail - About', icon_url=self.bot.user.avatar_url)
         em.set_thumbnail(url=self.bot.user.avatar_url)
 
@@ -404,11 +404,11 @@ class Utility:
 
     @config.command(name='del')
     async def _del(self, ctx, key: str.lower):
-        """Sets a specified key from the config to nothing."""
+        """Deletes a key from the config."""
         em = discord.Embed(
             title='Success',
             color=discord.Color.blurple(),
-            description=f'Set `{key}` to nothing.'
+            description=f'`{key}` had been deleted from the config.'
         )
 
         if key not in self.bot.config.allowed_to_change_in_command:
